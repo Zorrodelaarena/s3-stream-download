@@ -1,9 +1,5 @@
 # s3-stream-download
 
-  [![shippable Build][shippable-image]][shippable-url]
-  [![NPM Version][npm-image]][npm-url]
-  [![NPM Downloads][downloads-image]][downloads-url]
-
 Multipart streaming download from S3
 
 ## Features
@@ -60,6 +56,7 @@ __Arguments__
 ## People
 
 The original author is [Chris Kinsman](https://github.com/chriskinsman) from [PushSpring](http://www.pushspring.com)
+
 Maintained and updated to support AWS-SDK for JavaScript V3 by [Ryan Cramer](https://github.com/Zorrodelaarena)
 
 ## License
