@@ -11,19 +11,26 @@ Multipart streaming download from S3
 ## Installation
 
 ``` bash
-  $ npm install s3-stream-download --save
+  $ npm install git@github.com:Zorrodelaarena/s3-stream-download.git --save
 ```
 
 ## Usage
 
 ```js
-var AWS = require('aws-sdk');
-var S3StreamDownload = require('./index');
-var fs = require('fs');
+const { S3Client } = require("@aws-sdk/client-s3");
+const S3StreamDownload = require('s3-stream-download');
+const fs = require('fs');
 
-var s3 = new AWS.S3();
+const s3Client = new S3Client({ ... });
 
-var s3StreamDownload = new S3StreamDownload(s3, {Bucket: '<BUCKET>', Key:'<KEY>'});
+const readStream = new S3StreamDownload(s3Client, {
+	Bucket: '<BUCKET>',
+	Key: '<KEY>'
+}, {
+	downloadChunkSize : 5242880,
+	concurrentChunks: 5,
+	retries : 5
+});
 
 s3StreamDownload.pipe(fs.createWriteStream('<FILENAME>'));
 
@@ -52,7 +59,8 @@ __Arguments__
 
 ## People
 
-The author is [Chris Kinsman](https://github.com/chriskinsman) from [PushSpring](http://www.pushspring.com)
+The original author is [Chris Kinsman](https://github.com/chriskinsman) from [PushSpring](http://www.pushspring.com)
+Maintained and updated to support AWS-SDK for JavaScript V3 by [Ryan Cramer](https://github.com/Zorrodelaarena)
 
 ## License
 

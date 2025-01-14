@@ -1,7 +1,7 @@
 {
   "name": "s3-stream-download",
-  "version": "0.0.2",
-  "description": "Provides streaming multipart downloads for S3",
+  "version": "0.0.3",
+  "description": "Provides streaming multipart downloads for S3 - now with AWS SDK for JavaScript v3 support",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,10 +20,10 @@
     "debug": "^2.2.0"
   },
   "devDependencies": {
-    "aws-sdk": "^2.5.3"
+    "aws-sdk": "^3"
   },
   "engines": {
-    "node": ">= 4.0.0"
+    "node": ">= 20.0.0"
   },
-  "repository": "git@github.com:chriskinsman/s3-stream-download.git"
+  "repository": "git@github.com:Zorrodelaarena/s3-stream-download.git"
 }
